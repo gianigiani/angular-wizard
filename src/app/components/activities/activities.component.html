@@ -1,0 +1,44 @@
+<div>
+  <div class="activityLabel">
+    <div class="overText">{{ activitiesDaily.dayType }}</div>
+    <label for="choosenActivity" class="activity"> Activitate </label>
+    <select
+      [(ngModel)]="activitiesDaily.choosenActivity"
+      class="form-control"
+      (change)="onSelectActivity(activitiesDaily.choosenActivity)"
+    >
+      <option
+        *ngFor="let dailyActivity of dailyActivities"
+        [value]="dailyActivity"
+      >
+        {{ dailyActivity }}
+      </option>
+    </select>
+  </div>
+
+  <div class="fromLabel">
+    <label for="startTime">De la</label>
+    <input
+      class="startTime"
+      type="text"
+      name="startTime"
+      required
+      placeholder="{{ activitiesDaily.startTime }}"
+      [(ngModel)]="activitiesDaily.startTime"
+      (change)="onChangeStartTime($event)"
+    />
+  </div>
+
+  <div className="toLabel">
+    <label for="endTime">Pana la</label>
+    <input
+      class="endTime"
+      type="text"
+      name="endTime"
+      required
+      placeholder="{{ activitiesDaily.endTime }}"
+      [(ngModel)]="activitiesDaily.endTime"
+      (change)="onChangeEndTime($event)"
+    />
+  </div>
+</div>

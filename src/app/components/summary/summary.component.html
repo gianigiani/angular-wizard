@@ -1,0 +1,13 @@
+<div class="summaryContainer">
+  <div class="summary" *ngFor="let day of weekDaysT | keyvalue: keyAscOrder">
+    <div>{{ day.key | titlecase }}</div>
+    <div>
+      {{ day.value.morning.startTime }} - {{ day.value.morning.endTime }}
+      {{ day.value.morning.choosenActivity }}
+    </div>
+    <div>
+      {{ day.value.evening.startTime }} - {{ day.value.evening.endTime }}
+      {{ day.value.evening.choosenActivity }}
+    </div>
+  </div>
+</div>
